@@ -1,6 +1,6 @@
----
+<!-- ---
 layout:     post
-title:      "「知乎」如何看待微信屏蔽快的打车事件？"
+title:      "如何看待微信屏蔽快的打车事件？"
 subtitle:   "恰有小感。"
 date:       2014-12-13
 author:     "Hux"
@@ -67,5 +67,4 @@ tags:
     <br><b>枣呢 ！？！？</b>
     <br>
     <br>
-</div>
-
+</div> -->
