@@ -22,10 +22,10 @@ export function AboutPage() {
           </div>
           
           <h2 className="text-xl font-bold text-gray-900 mb-2">
-            Your Name
+            leelione
           </h2>
           <p className="text-gray-500 mb-6">
-            前端开发工程师 / 技术爱好者
+            Unity TA / 技术爱好者
           </p>
           
           {/* Social Links */}
@@ -64,11 +64,11 @@ export function AboutPage() {
         </div>
         <div className="prose prose-gray max-w-none">
           <p className="text-gray-700 leading-relaxed mb-4">
-            你好！我是一名热爱技术的前端开发工程师。我喜欢探索新技术，分享学习心得，
+            你好！我是一名热爱技术的技术美术。我喜欢探索新技术，分享学习心得，
             并通过写作来整理和巩固自己的知识体系。
           </p>
           <p className="text-gray-700 leading-relaxed mb-4">
-            这个博客是我记录技术成长的地方，内容涵盖前端开发、React 生态、TypeScript、
+            这个博客是我记录技术成长的地方，内容涵盖Unity shader编写、URP管线扩展、编辑器工具开发、
             性能优化等话题。希望我的文章能对你有所帮助！
           </p>
         </div>
