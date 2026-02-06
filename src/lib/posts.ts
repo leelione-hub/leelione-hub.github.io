@@ -116,41 +116,6 @@ const LazyComponent = lazy(() => import('./LazyComponent'));
 
 对于长列表，使用 react-window 或 react-virtualized。
     `
-  },
-  {
-    id: '3',
-    title: 'TypeScript 高级类型',
-    subtitle: '掌握 TypeScript 的类型系统',
-    date: '2025-01-10',
-    author: 'Your Name',
-    tags: ['TypeScript', '前端'],
-    excerpt: '深入学习 TypeScript 的高级类型，包括泛型、条件类型、映射类型等。',
-    slug: 'typescript-advanced-types',
-    content: `
-## TypeScript 高级类型
-
-### 泛型
-
-\`\`\`typescript
-function identity<T>(arg: T): T {
-  return arg;
-}
-\`\`\`
-
-### 条件类型
-
-\`\`\`typescript
-type IsString<T> = T extends string ? true : false;
-\`\`\`
-
-### 映射类型
-
-\`\`\`typescript
-type Readonly<T> = {
-  readonly [P in keyof T]: T[P];
-};
-\`\`\`
-    `
   }
 ];
 
