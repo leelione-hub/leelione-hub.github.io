@@ -10,16 +10,36 @@ import path from 'path';
 
 const commitMsg = process.argv[2] || '更新博客';
 
+// Vite 开发入口模板
+const devHtml = `<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tech Blog</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+`;
+
 console.log('🚀 开始部署博客...\n');
 
 try {
+  // 0. 先恢复 index.html 为 Vite 入口格式（用于正确构建）
+  console.log('📝 步骤 0/5: 恢复开发入口...');
+  fs.writeFileSync(path.join(process.cwd(), 'index.html'), devHtml);
+  console.log('✅ 已恢复开发入口\n');
+
   // 1. 构建项目
-  console.log('📦 步骤 1/4: 构建项目...');
+  console.log('📦 步骤 1/5: 构建项目...');
   execSync('npm run build', { stdio: 'inherit' });
   console.log('✅ 构建完成\n');
 
   // 2. 获取构建后的 JS 和 CSS 文件名
-  console.log('📄 步骤 2/4: 更新入口文件...');
+  console.log('📄 步骤 2/5: 更新入口文件...');
   const distAssetsDir = path.join(process.cwd(), 'dist', 'assets');
   const files = fs.readdirSync(distAssetsDir);
   
@@ -30,8 +50,8 @@ try {
     throw new Error('找不到构建后的资源文件');
   }
   
-  // 3. 更新根目录 index.html
-  const htmlContent = `<!doctype html>
+  // 3. 更新根目录 index.html 为生产环境格式
+  const prodHtml = `<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -46,12 +66,12 @@ try {
 </html>
 `;
   
-  fs.writeFileSync(path.join(process.cwd(), 'index.html'), htmlContent);
+  fs.writeFileSync(path.join(process.cwd(), 'index.html'), prodHtml);
   console.log(`✅ 入口文件已更新: ${jsFile}\n`);
 
   // 4. Git 提交和推送
-  console.log('📤 步骤 3/4: 提交更改...');
-  execSync('git add index.html dist/', { stdio: 'ignore' });
+  console.log('📤 步骤 3/5: 提交更改...');
+  execSync('git add index.html dist/ src/', { stdio: 'ignore' });
   
   try {
     execSync(`git commit -m "${commitMsg}"`, { stdio: 'ignore' });
@@ -61,7 +81,7 @@ try {
   }
 
   // 5. 推送到 GitHub
-  console.log('📤 步骤 4/4: 推送到 GitHub...');
+  console.log('📤 步骤 4/5: 推送到 GitHub...');
   execSync('git push origin main', { stdio: 'inherit' });
   console.log('✅ 推送完成\n');
 
