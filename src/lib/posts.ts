@@ -78,44 +78,6 @@ npm run deploy
 
 现在你已经拥有了一个简洁优雅的个人技术博客！
     `
-  },
-  {
-    id: '2',
-    title: 'React 性能优化技巧',
-    subtitle: '提升应用性能的实用方法',
-    date: '2025-01-20',
-    author: 'Your Name',
-    tags: ['React', '性能优化', '前端'],
-    excerpt: '分享一些在 React 开发中常用的性能优化技巧，包括 useMemo、useCallback、代码分割等。',
-    slug: 'react-performance-tips',
-    content: `
-## React 性能优化
-
-### 1. 使用 useMemo
-
-\`\`\`tsx
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
-\`\`\`
-
-### 2. 使用 useCallback
-
-\`\`\`tsx
-const memoizedCallback = useCallback(
-  () => doSomething(a, b),
-  [a, b],
-);
-\`\`\`
-
-### 3. 代码分割
-
-\`\`\`tsx
-const LazyComponent = lazy(() => import('./LazyComponent'));
-\`\`\`
-
-### 4. 虚拟列表
-
-对于长列表，使用 react-window 或 react-virtualized。
-    `
   }
 ];
 

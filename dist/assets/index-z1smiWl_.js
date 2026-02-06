@@ -107,31 +107,4 @@ npm run deploy
 ## 总结
 
 现在你已经拥有了一个简洁优雅的个人技术博客！
-    `},{id:"2",title:"React 性能优化技巧",subtitle:"提升应用性能的实用方法",date:"2025-01-20",author:"Your Name",tags:["React","性能优化","前端"],excerpt:"分享一些在 React 开发中常用的性能优化技巧，包括 useMemo、useCallback、代码分割等。",slug:"react-performance-tips",content:`
-## React 性能优化
-
-### 1. 使用 useMemo
-
-\`\`\`tsx
-const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
-\`\`\`
-
-### 2. 使用 useCallback
-
-\`\`\`tsx
-const memoizedCallback = useCallback(
-  () => doSomething(a, b),
-  [a, b],
-);
-\`\`\`
-
-### 3. 代码分割
-
-\`\`\`tsx
-const LazyComponent = lazy(() => import('./LazyComponent'));
-\`\`\`
-
-### 4. 虚拟列表
-
-对于长列表，使用 react-window 或 react-virtualized。
     `}];function f6(){return To.map(({content:e,...n})=>n)}function d6(e){return To.find(n=>n.slug===e)}function h6(){const e=new Set;return To.forEach(n=>n.tags.forEach(i=>e.add(i))),Array.from(e)}function m6(e){return To.filter(n=>n.tags.includes(e)).map(({content:n,...i})=>i)}function p6(){return f6().sort((e,n)=>new Date(n.date).getTime()-new Date(e.date).getTime())}function g6(){const[e,n]=Jn.useState("home"),[i,u]=Jn.useState(null),[l,o]=Jn.useState(null),[f,m]=Jn.useState([]),g=p6(),p=h6();Jn.useEffect(()=>{m(l?m6(l):g)},[l]);const E=M=>{n(M),u(null),window.scrollTo(0,0)},b=M=>{u(M),n("post"),window.scrollTo(0,0)},y=M=>{o(M),n("archive"),window.scrollTo(0,0)},T=()=>{n("home"),u(null),window.scrollTo(0,0)},O=()=>{switch(e){case"home":return q.jsx(HT,{"code-path":"src/App.tsx:59:11",posts:g,onPostClick:b,onTagClick:y});case"archive":return q.jsx(l6,{"code-path":"src/App.tsx:67:11",posts:f,allTags:p,selectedTag:l,onPostClick:b,onTagClick:y});case"about":return q.jsx(o6,{"code-path":"src/App.tsx:76:16"});case"post":if(i){const M=d6(i);if(M)return q.jsx(s6,{"code-path":"src/App.tsx:82:15",post:M,onBack:T,onTagClick:y})}return q.jsxs("div",{"code-path":"src/App.tsx:91:11",className:"text-center py-16",children:[q.jsx("p",{"code-path":"src/App.tsx:92:13",className:"text-gray-500",children:"文章未找到"}),q.jsx("button",{"code-path":"src/App.tsx:93:13",onClick:T,className:"mt-4 text-blue-600 hover:underline",children:"返回首页"})]});default:return null}};return q.jsxs("div",{"code-path":"src/App.tsx:107:5",className:"min-h-screen bg-gray-50/50",children:[q.jsx(UT,{"code-path":"src/App.tsx:108:7",currentPage:e,onPageChange:E}),q.jsx("main",{"code-path":"src/App.tsx:110:7",className:"max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8",children:O()}),q.jsx(c6,{"code-path":"src/App.tsx:114:7"})]})}mT.createRoot(document.getElementById("root")).render(q.jsx(Jn.StrictMode,{"code-path":"src/main.tsx:7:3",children:q.jsx(g6,{"code-path":"src/main.tsx:8:5"})}));
